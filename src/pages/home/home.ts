@@ -22,24 +22,27 @@ export class HomePage {
   coparts:any[] = [];
   timeSlot1;timeSlot2;timeSlot3;timeSlot4;timeSlot5;timeSlot6;timeSlot7;timeSlot8;
   timeSlot17;timeSlot16;timeSlot15;timeSlot14;timeSlot13;timeSlot12;timeSlot11;timeSlot10;
-  timeSlot9;timeSlot18;
+  timeSlot9;timeSlot18;timeSlot19;
   monthNames = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
   ];
+  timeFrame2;timeFrame3;timeFrame4;timeFrame5;timeFrame6;timeFrame7;timeFrame8;timeFrame9;timeFrame10;timeFrame11;timeFrame12;
+  timeFrame13;timeFrame14;timeFrame15;timeFrame16;timeFrame17;timeFrame18;
   constructor(public navCtrl: NavController,private alertCtrl: AlertController,public dbProvider:DatabaseProvider,
               public http:Http,public loadingCtrl:LoadingController,private storage: Storage,public modalCtrl : ModalController) {
-    this.loader = this.loadingCtrl.create({
-      content: "Fetching Coparts...",
-      spinner : 'crescent',
-    });
-    let env = this;
-    setTimeout(function () {
-      env.fetchCoparts()
-    },3000);
-    this.loader.present();
-    setInterval(function () {
-      env.latestTime();
-    },1000);
+    console.log("Home.ts")
+    // this.loader = this.loadingCtrl.create({
+    //   content: "Fetching Coparts...",
+    //   spinner : 'crescent',
+    // });
+    // let env = this;
+    // setTimeout(function () {
+    //   env.fetchCoparts()
+    // },3000);
+    // this.loader.present();
+    // setInterval(function () {
+    //   env.latestTime();
+    // },1000);
 
   }
 
@@ -82,124 +85,164 @@ export class HomePage {
     // else {
     //   env.storage.set('timeSlot2',this.copart2);
     // }
+    if(this.timeSlot2 !=undefined || this.timeSlot2 =='undefined'){
+      env.storage.set('timeSlot2',this.timeSlot2);
+      env.storage.set('timeFrame2',this.timeFrame2);
+    }
+    else {
+      env.storage.set('timeSlot2',this.copart2);
+      env.storage.set('timeFrame2',this.timeFrame2);
+    }
     if(this.timeSlot3 !=undefined || this.timeSlot3 =='undefined'){
       env.storage.set('timeSlot3',this.timeSlot3);
+      env.storage.set('timeFrame3',this.timeFrame3);
     }
     else {
       env.storage.set('timeSlot3',this.copart3);
+      env.storage.set('timeFrame3',this.timeFrame3);
     }
     if(this.timeSlot4 !=undefined || this.timeSlot4 =='undefined'){
       env.storage.set('timeSlot4',this.timeSlot4);
+      env.storage.set('timeFrame4',this.timeFrame4);
     }
     else {
       env.storage.set('timeSlot4',this.copart4);
+      env.storage.set('timeFrame4',this.timeFrame4);
     }
     if(this.timeSlot5 !=undefined || this.timeSlot5 =='undefined'){
       env.storage.set('timeSlot5',this.timeSlot5);
+      env.storage.set('timeFrame5',this.timeFrame5);
     }
     else {
       env.storage.set('timeSlot5',this.copart5);
+      env.storage.set('timeFrame5',this.timeFrame5);
     }
     if(this.timeSlot6 !=undefined || this.timeSlot6 =='undefined'){
       env.storage.set('timeSlot6',this.timeSlot6);
+      env.storage.set('timeFrame6',this.timeFrame6);
     }
     else {
       env.storage.set('timeSlot6',this.copart6);
+      env.storage.set('timeFrame6',this.timeFrame6);
     }
     if(this.timeSlot7 !=undefined || this.timeSlot7 =='undefined'){
       env.storage.set('timeSlot7',this.timeSlot7);
+      env.storage.set('timeFrame7',this.timeFrame7);
     }
     else {
       env.storage.set('timeSlot7',this.copart7);
+      env.storage.set('timeFrame7',this.timeFrame7);
     }
     if(this.timeSlot8 !=undefined || this.timeSlot8 =='undefined'){
       env.storage.set('timeSlot8',this.timeSlot8);
+      env.storage.set('timeFrame8',this.timeFrame8);
     }
     else {
       env.storage.set('timeSlot8',this.copart8);
+      env.storage.set('timeFrame8',this.timeFrame8);
     }
     if(this.timeSlot9 !=undefined || this.timeSlot9 =='undefined'){
       env.storage.set('timeSlot9',this.timeSlot9);
+      env.storage.set('timeFrame9',this.timeFrame9);
     }
     else {
       env.storage.set('timeSlot9',this.copart9);
+      env.storage.set('timeFrame9',this.timeFrame9);
     }
     if(this.timeSlot10 !=undefined || this.timeSlot10 =='undefined'){
       env.storage.set('timeSlot10',this.timeSlot10);
+      env.storage.set('timeFrame10',this.timeFrame10);
     }
     else {
       env.storage.set('timeSlot10',this.copart10);
+      env.storage.set('timeFrame10',this.timeFrame10);
     }
     if(this.timeSlot11 !=undefined || this.timeSlot11 =='undefined'){
       env.storage.set('timeSlot11',this.timeSlot11);
+      env.storage.set('timeFrame11',this.timeFrame11);
     }
     else {
       env.storage.set('timeSlot11',this.copart11);
+      env.storage.set('timeFrame11',this.timeFrame11);
     }
     if(this.timeSlot12 !=undefined || this.timeSlot12 =='undefined'){
       env.storage.set('timeSlot12',this.timeSlot12);
+      env.storage.set('timeFrame12',this.timeFrame12);
     }
     else {
       env.storage.set('timeSlot12',this.copart12);
+      env.storage.set('timeFrame12',this.timeFrame12);
     }
     if(this.timeSlot13 !=undefined || this.timeSlot13 =='undefined'){
       env.storage.set('timeSlot13',this.timeSlot13);
+      env.storage.set('timeFrame13',this.timeFrame13);
     }
     else {
       env.storage.set('timeSlot13',this.copart13);
+      env.storage.set('timeFrame13',this.timeFrame13);
     }
     if(this.timeSlot14 !=undefined || this.timeSlot14 =='undefined'){
       env.storage.set('timeSlot14',this.timeSlot14);
+      env.storage.set('timeFrame14',this.timeFrame14);
     }
     else {
       env.storage.set('timeSlot14',this.copart14);
+      env.storage.set('timeFrame14',this.timeFrame14);
     }
     if(this.timeSlot15 !=undefined || this.timeSlot15 =='undefined'){
       env.storage.set('timeSlot15',this.timeSlot15);
+      env.storage.set('timeFrame15',this.timeFrame15);
     }
     else {
       env.storage.set('timeSlot15',this.copart15);
+      env.storage.set('timeFrame15',this.timeFrame15);
     }
     if(this.timeSlot16 !=undefined || this.timeSlot16 =='undefined'){
       env.storage.set('timeSlot16',this.timeSlot16);
+      env.storage.set('timeFrame16',this.timeFrame16);
     }
     else {
       env.storage.set('timeSlot16',this.copart16);
+      env.storage.set('timeFrame16',this.timeFrame16);
     }
     if(this.timeSlot17 !=undefined || this.timeSlot17 =='undefined'){
       env.storage.set('timeSlot17',this.timeSlot17);
+      env.storage.set('timeFrame17',this.timeFrame17);
     }
     else {
       env.storage.set('timeSlot17',this.copart17);
+      env.storage.set('timeFrame17',this.timeFrame17);
     }
     if(this.timeSlot18 !=undefined || this.timeSlot18 =='undefined'){
       env.storage.set('timeSlot18',this.timeSlot18);
+      env.storage.set('timeFrame18',this.timeFrame18);
     }
     else {
       env.storage.set('timeSlot18',this.copart18);
+      env.storage.set('timeFrame18',this.timeFrame18);
     }
     // env.storage.set('date',this.myDate);
     // env.storage.set('roomDetail',this.roomName);
 
     // env.nextPage(0,"09:00 AM - 09:30 AM",this.timeSlot1);
-    // env.nextPage(1,"09:30 AM - 10:00 AM",this.timeSlot2);
-    env.nextPage(2,"10:00 AM - 10:30 AM",this.timeSlot3);
-    env.nextPage(3,"10:30 AM - 11:00 AM",this.timeSlot4);
-    env.nextPage(4,"11:00 AM - 11:30 AM",this.timeSlot5);
-    env.nextPage(5,"11:30 AM - 12:00 PM",this.timeSlot6);
-    env.nextPage(6,"12:00 PM - 12:30 PM",this.timeSlot7);
-    env.nextPage(7,"12:30 PM - 01:00 PM",this.timeSlot8);
-    env.nextPage(8,"01:00 PM - 01:30 PM",this.timeSlot9);
-    env.nextPage(9,"01:30 PM - 02:00 PM",this.timeSlot10);
-    env.nextPage(10,"02:00 PM - 02:30 PM",this.timeSlot11);
-    env.nextPage(11,"02:30 PM - 03:00 PM",this.timeSlot12);
-    env.nextPage(12,"03:00 PM - 03:30 PM",this.timeSlot13);
-    env.nextPage(13,"03:30 PM - 04:00 PM",this.timeSlot14);
-    env.nextPage(14,"04:00 PM - 04:30 PM",this.timeSlot15);
-    env.nextPage(15,"04:30 PM - 05:00 PM",this.timeSlot16);
-    env.nextPage(16,"05:00 PM - 05:30 PM",this.timeSlot17);
-    env.nextPage(17,"05:30 PM - 06:00 PM",this.timeSlot18);
-    env.nextPage(288,"05:30 PM - 06:00 PM",this.timeSlot18);
+    env.nextPage(1,this.timeFrame2,this.timeSlot2);
+    env.nextPage(2,this.timeFrame3,this.timeSlot3);
+    env.nextPage(3,this.timeFrame4,this.timeSlot4);
+    env.nextPage(4,this.timeFrame5,this.timeSlot5);
+    env.nextPage(5,this.timeFrame6,this.timeSlot6);
+    env.nextPage(6,this.timeFrame7,this.timeSlot7);
+    env.nextPage(7,this.timeFrame8,this.timeSlot8);
+    env.nextPage(8,this.timeFrame9,this.timeSlot9);
+    env.nextPage(9,this.timeFrame10,this.timeSlot10);
+    env.nextPage(10,this.timeFrame11,this.timeSlot11);
+    env.nextPage(11,this.timeFrame12,this.timeSlot12);
+    env.nextPage(12,this.timeFrame13,this.timeSlot13);
+    env.nextPage(13,this.timeFrame14,this.timeSlot14);
+    env.nextPage(14,this.timeFrame15,this.timeSlot15);
+    env.nextPage(15,this.timeFrame16,this.timeSlot16);
+    env.nextPage(16,this.timeFrame17,this.timeSlot17);
+    env.nextPage(17,this.timeFrame18,this.timeSlot18);
+    env.nextPage(288,this.timeSlot19,this.timeSlot18);
   }
 
   nextPage(index,time,name){
@@ -232,8 +275,8 @@ export class HomePage {
 
         // env.storage.get('timeSlot1').then(data=>{
         //   this.copart1 = data;
-        //   env.storage.get('timeSlot2').then(data=>{
-        //     this.copart2 = data;
+          env.storage.get('timeSlot2').then(data=>{
+            this.copart2 = data;
             env.storage.get('timeSlot3').then(data=>{
               this.copart3 = data;
               env.storage.get('timeSlot4').then(data=>{
@@ -268,11 +311,12 @@ export class HomePage {
                                             this.copart18 = data;
                                             console.log("Last Copart->"+this.copart18);
                                             //TODO API PARSING
-                                            this.http.get('http://13.126.65.0/dtcm/admin/api/', {}).map(res => res.json()).subscribe(data => {
+                                            this.http.get('http://rayqube.com/projects/dtcm_way_finder/rest/get_coparts/', {}).map(res => res.json()).subscribe(data => {
                                               // console.log(data);
                                               //      loadingPopup.dismiss();
-                                              let data_to_use = data;
-                                              console.log("data-> "+ data);
+                                              let data_to_use = data.copart;
+
+                                             // console.log("data-> "+ JSON.stringify(data));
                                               for(let copart of data_to_use)
                                               {
                                                 console.log("copartId-> " + copart.id + "copart_name-> " + copart.name);
@@ -310,7 +354,7 @@ export class HomePage {
             });
           });
         });
-    //   });
+      });
     // });
   }
 

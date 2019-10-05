@@ -19,8 +19,8 @@ page-home {
 
 	.background_image
 	  {
-	    background-image: linear-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4))), url(../assets/imgs/background.jpg);
-	    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4))), url(../assets/imgs/background.jpg);
+	    background-image: linear-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4))), url(../assets/imgs/back.jpg);
+	    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4))), url(../assets/imgs/back.jpg);
 	    background-size: cover;
 	    background-position: center;
 	    background-repeat: no-repeat;
@@ -73,7 +73,10 @@ page-home {
 	  {
 	  	  display: block;
     	  margin: 10px auto;
-	      background-color: rgb(0,144,215);
+      background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4))), url(../assets/imgs/submit.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
 	      padding: 0 2em;
 	      border-radius: 0;
 	      border-top-left-radius: 20px;
@@ -85,6 +88,11 @@ page-home {
       max-width: 100% !important;
       width: 51% !important;
     }
+
+  .item-input ion-input, .item-input ion-textarea {
+    position: static;
+    padding-left: 25%;
+  }
   .gap
   {
     padding: 0px 5px;
@@ -134,7 +142,7 @@ page-home {
     .button_submit {
       display: block;
       margin: 10px auto;
-      background-color: #0090d7;
+      background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4))), url(../assets/imgs/submit.jpg);
       padding: 0 2em;
       border-radius: 0;
       border-top-left-radius: 25px;

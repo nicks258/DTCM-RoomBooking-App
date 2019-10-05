@@ -32,6 +32,8 @@ export class PreviewPage {
   timeSlot1=" ";timeSlot2=" ";timeSlot3=" ";timeSlot4=" ";timeSlot5=" ";timeSlot6=" ";timeSlot7=" ";timeSlot8=" ";
   timeSlot17=" ";timeSlot16=" ";timeSlot15=" ";timeSlot14=" ";timeSlot13=" ";timeSlot12=" ";timeSlot11=" ";timeSlot10=" ";
   timeSlot9=" ";timeSlot18=" ";
+  timeFrame2;timeFrame3;timeFrame4;timeFrame5;timeFrame6;timeFrame7;timeFrame8;timeFrame9;timeFrame10;timeFrame11;timeFrame12;
+  timeFrame13;timeFrame14;timeFrame15;timeFrame16;timeFrame17;timeFrame18;
   myDate;
   constructor(public navCtrl: NavController,private alertCtrl: AlertController, public navParams: NavParams,public storage:Storage,public modalCtrl : ModalController,
               public dbProvider:DatabaseProvider,public loadingCtrl:LoadingController) {
@@ -41,14 +43,14 @@ export class PreviewPage {
       content: "Setting up your meeting...",
       spinner : 'crescent',
     });
-    this.loader.present();
+  //  this.loader.present();
     let env = this;
-    setTimeout(function () {
-      env.dbProvider.getAllCoParts().then(data=>{
-        env.coparts = data;
-        env.loader.dismiss();
-      });
-    },3000);
+    // setTimeout(function () {
+    //   env.dbProvider.getAllCoParts().then(data=>{
+    //     env.coparts = data;
+    //     env.loader.dismiss();
+    //   });
+    // },3000);
     setInterval(function () {
       env.latestTime();
     },1000);
@@ -66,6 +68,70 @@ export class PreviewPage {
       //     if(data==undefined){
       //       this.dropDown2 = true;
       //     }
+
+
+      env.storage.get('timeFrame2').then(data => {
+        this.timeFrame2 = data;
+      });
+      env.storage.get('timeFrame3').then(data => {
+        this.timeFrame3 = data;
+      });
+      env.storage.get('timeFrame4').then(data => {
+        this.timeFrame4 = data;
+      });
+      env.storage.get('timeFrame5').then(data => {
+        this.timeFrame5 = data;
+      });
+      env.storage.get('timeFrame6').then(data => {
+        this.timeFrame6 = data;
+      });
+      env.storage.get('timeFrame7').then(data => {
+      this.timeFrame7 = data;
+      });
+      env.storage.get('timeFrame8').then(data => {
+        this.timeFrame8 = data;
+      });
+      env.storage.get('timeFrame9').then(data => {
+        this.timeFrame9 = data;
+      });
+      env.storage.get('timeFrame10').then(data => {
+      this.timeFrame10 = data;
+      });
+      env.storage.get('timeFrame11').then(data => {
+      this.timeFrame11 = data;
+      });
+      env.storage.get('timeFrame12').then(data => {
+      this.timeFrame12 = data;
+      });
+      env.storage.get('timeFrame13').then(data => {
+        this.timeFrame13 = data;
+      });
+      env.storage.get('timeFrame14').then(data => {
+        this.timeFrame14 = data;
+      });
+      env.storage.get('timeFrame15').then(data => {
+        this.timeFrame15 = data;
+      });
+      env.storage.get('timeFrame16').then(data => {
+        this.timeFrame16 = data;
+      });
+      env.storage.get('timeFrame17').then(data => {
+        this.timeFrame17 = data;
+      });
+      env.storage.get('timeFrame18').then(data => {
+        this.timeFrame18 = data;
+      });
+
+    }
+
+
+
+
+      env.storage.get('timeSlot2').then(data=>{
+        this.timeSlot2 = data;
+        if(data==undefined  || data=='undefined'){
+          this.dropDown2 = true;
+        }
           env.storage.get('timeSlot3').then(data=>{
             this.timeSlot3 = data;
             if(data==undefined || data=='undefined'){
@@ -236,6 +302,7 @@ export class PreviewPage {
               });
             });
           });
+          });
       //   });
       // });
 
@@ -259,7 +326,6 @@ export class PreviewPage {
     //   this.myDate = this.navParams.get("DATE");
     // }
 
-  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PreviewPage');
@@ -308,10 +374,29 @@ export class PreviewPage {
             //   this.dropDown2 = false;
             //   env.storage.set('timeSlot2',this.timeSlot2);
             // }
-            if(text == 'slot3')
+            if(text == 'slot2')
             {
-              this.dropDown3 = false;
-              env.storage.set('timeSlot3',this.timeSlot3);
+              if(this.timeSlot2 == this.timeSlot3){
+                env.presentWarning();
+                this.timeSlot2 = null;
+              }
+              else {
+                this.dropDown2 = false;
+                env.storage.set('timeSlot2',this.timeSlot2);
+              }
+
+            }
+            else if(text == 'slot3')
+            {
+              if(this.timeSlot2 == this.timeSlot3 || this.timeSlot3 == this.timeSlot4){
+                env.presentWarning();
+                this.timeSlot3 = null;
+              }
+              else {
+                this.dropDown3 = false;
+                env.storage.set('timeSlot3',this.timeSlot3);
+              }
+
             }
             else if(text == 'slot4')
             {

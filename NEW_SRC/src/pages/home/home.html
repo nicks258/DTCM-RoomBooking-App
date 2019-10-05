@@ -1,0 +1,238 @@
+
+<ion-content no-bounce padding class="background_image">
+  <ion-grid class="gap">
+    <ion-row>
+      <ion-col col-8 style="padding: 0;">
+        <h3 class="metting_date">Meeting Room: {{roomName}}<br>{{date}} {{myDate}} &nbsp; {{time}}</h3>
+      </ion-col>
+      <ion-col col-4>
+	<img (click)="openAuth()" class="logo_dubai" src="assets/imgs/dubaiwhite.png" >
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+	<ion-grid>
+	  <ion-row>
+	  	<!--<ion-col col-1></ion-col>-->
+	    <ion-col col-12 class="inner_box">
+
+	    	<!--<ion-list>-->
+			  <!--<ion-item>-->
+			    <!--<ion-label>09:00 AM - 09:30 AM</ion-label>-->
+			    <!--<ion-select [(ngModel)]="timeSlot1">-->
+			      <!--<ion-option *ngFor="let copart of coparts;" value={{copart.coparts_name}} [selected]="copart.coparts_name == copart1">{{copart.coparts_name}}</ion-option>-->
+			    <!--</ion-select>-->
+			  <!--</ion-item>-->
+			<!--&lt;!&ndash;</ion-list>&ndash;&gt;-->
+
+			<!--&lt;!&ndash;<ion-list>&ndash;&gt;-->
+			  <ion-item>
+			    <ion-label>09:30 AM - 10:00 AM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot2"  >
+            <ion-option value=undefined> - </ion-option>
+            <ion-option *ngFor="let copart of coparts;"  value={{copart.coparts_name}} [selected]="copart.coparts_name == copart2">{{copart.coparts_name}}</ion-option>
+			    </ion-select>
+			  </ion-item>
+
+
+			<!--<ion-list>-->
+			  <ion-item>
+			    <ion-label>10:00 AM - 10:30 AM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot3" >
+            <ion-option value=undefined> - </ion-option>
+            <ion-option *ngFor="let copart of coparts;" value={{copart.coparts_name}} [selected]="copart.coparts_name == copart3">{{copart.coparts_name}}</ion-option>
+			    </ion-select>
+			  </ion-item>
+			<!--</ion-list>-->
+
+			<!--<ion-list>-->
+			  <ion-item>
+			    <ion-label>10:30 AM - 11:00 AM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot4" >
+            <ion-option value=undefined> - </ion-option>
+            <ion-option *ngFor="let copart of coparts;" value={{copart.coparts_name}} [selected]="copart.coparts_name == copart4">{{copart.coparts_name}}</ion-option>
+			    </ion-select>
+			  </ion-item>
+			<!--</ion-list>-->
+
+			<!--<ion-list>-->
+			  <ion-item>
+			    <ion-label>11:00 AM - 11:30 AM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot5" >
+            <ion-option value=undefined> - </ion-option>
+            <ion-option *ngFor="let copart of coparts;" value={{copart.coparts_name}} [selected]="copart.coparts_name == copart5">{{copart.coparts_name}}</ion-option>
+			    </ion-select>
+			  </ion-item>
+			<!--</ion-list>-->
+
+			<!--<ion-list>-->
+			  <ion-item>
+			    <ion-label>11:30 AM - 12:00 PM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot6" >
+            <ion-option value=undefined> - </ion-option>
+            <ion-option *ngFor="let copart of coparts;" value={{copart.coparts_name}} [selected]="copart.coparts_name == copart6">{{copart.coparts_name}}</ion-option>
+			    </ion-select>
+			  </ion-item>
+			<!--</ion-list>-->
+
+			<!--<ion-list>-->
+			  <ion-item>
+			    <ion-label>12:00 PM - 12:30 PM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot7" >
+            <ion-option value=undefined> - </ion-option>
+            <ion-option *ngFor="let copart of coparts;" value={{copart.coparts_name}} [selected]="copart.coparts_name == copart7">{{copart.coparts_name}}</ion-option>
+			    </ion-select>
+			  </ion-item>
+			<!--</ion-list>-->
+
+			<!--<ion-list>-->
+			  <ion-item>
+			    <ion-label>12:30 PM - 01:00 PM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot8" >
+            <ion-option value=undefined> - </ion-option>
+            <ion-option *ngFor="let copart of coparts;" value={{copart.coparts_name}} [selected]="copart.coparts_name == copart8">{{copart.coparts_name}}</ion-option>
+			    </ion-select>
+			  </ion-item>
+			<!--</ion-list>-->
+
+			<!--<ion-list>-->
+			  <ion-item>
+			    <ion-label>01:00 PM - 01:30 PM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot9" >
+            <ion-option value=undefined> - </ion-option>
+            <ion-option *ngFor="let copart of coparts;" value={{copart.coparts_name}} [selected]="copart.coparts_name == copart9">{{copart.coparts_name}}</ion-option>
+			    </ion-select>
+			  </ion-item>
+			<!--</ion-list>-->
+
+			<!--<ion-list>-->
+			  <ion-item>
+			    <ion-label>01:30 PM - 02:00 PM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot10" >
+            <ion-option value=undefined> - </ion-option>
+            <ion-option *ngFor="let copart of coparts;" value={{copart.coparts_name}} [selected]="copart.coparts_name == copart10">{{copart.coparts_name}}</ion-option>
+			    </ion-select>
+			  </ion-item>
+			<!--</ion-list>-->
+
+			<!--<ion-list>-->
+			  <ion-item>
+			    <ion-label>02:00 PM - 02:30 PM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot11" >
+            <ion-option value=undefined> - </ion-option>
+            <ion-option *ngFor="let copart of coparts;" value={{copart.coparts_name}} [selected]="copart.coparts_name == copart11">{{copart.coparts_name}}</ion-option>
+			    </ion-select>
+			  </ion-item>
+			<!--</ion-list>-->
+
+			<!--<ion-list>-->
+			  <ion-item>
+			    <ion-label>02:30 PM - 03:00 PM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot12" >
+            <ion-option value=undefined> - </ion-option>
+            <ion-option *ngFor="let copart of coparts;" value={{copart.coparts_name}} [selected]="copart.coparts_name == copart12" >{{copart.coparts_name}}</ion-option>
+			    </ion-select>
+			  </ion-item>
+			<!--</ion-list>-->
+
+			<!--<ion-list>-->
+			  <ion-item>
+			    <ion-label>03:00 PM - 03:30 PM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot13" >
+            <ion-option value=undefined> - </ion-option>
+            <ion-option *ngFor="let copart of coparts;" value={{copart.coparts_name}} [selected]="copart.coparts_name == copart13">{{copart.coparts_name}}</ion-option>
+			    </ion-select>
+			  </ion-item>
+			<!--</ion-list>-->
+
+			<!--<ion-list>-->
+			  <ion-item>
+			    <ion-label>03:30 PM - 04:00 PM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot14" >
+            <ion-option value=undefined> - </ion-option>
+            <ion-option *ngFor="let copart of coparts;" value={{copart.coparts_name}} [selected]="copart.coparts_name == copart14">{{copart.coparts_name}}</ion-option>
+			    </ion-select>
+			  </ion-item>
+			<!--</ion-list>-->
+
+			<!--<ion-list>-->
+			  <ion-item>
+			    <ion-label>04:00 PM - 04:30 PM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot15" >
+            <ion-option value=undefined> - </ion-option>
+            <ion-option *ngFor="let copart of coparts;" value={{copart.coparts_name}} [selected]="copart.coparts_name == copart15">{{copart.coparts_name}} </ion-option>
+			    </ion-select>
+			  </ion-item>
+			<!--</ion-list>-->
+
+			<!--<ion-list>-->
+			  <ion-item>
+			    <ion-label>04:30 PM - 05:00 PM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot16" >
+            <ion-option value=undefined> - </ion-option>
+            <ion-option *ngFor="let copart of coparts;" value={{copart.coparts_name}} [selected]="copart.coparts_name == copart16">{{copart.coparts_name}}</ion-option>
+			    </ion-select>
+			  </ion-item>
+			<!--</ion-list>-->
+
+			<!--<ion-list>-->
+			  <ion-item>
+			    <ion-label>05:00 PM - 05:30 PM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot17" >
+            <ion-option value=undefined> - </ion-option>
+            <ion-option *ngFor="let copart of coparts;" value={{copart.coparts_name}} [selected]="copart.coparts_name == copart17">{{copart.coparts_name}}</ion-option>
+			    </ion-select>
+			  </ion-item>
+			<!--</ion-list>-->
+
+			<!--<ion-list>-->
+			  <ion-item>
+			    <ion-label>05:30 PM - 06:00 PM</ion-label>
+			    <ion-select [(ngModel)]="timeSlot18" >
+            <ion-option value=undefined> - </ion-option>
+            <ion-option  *ngFor="let copart of coparts;" value={{copart.coparts_name}} [selected]="copart.coparts_name == copart18">{{copart.coparts_name}}</ion-option>
+            <!--<ion-option *ngFor="let copart of coparts;" value={{copart.coparts_name}}>{{copart.coparts_name}}</ion-option>-->
+			    </ion-select>
+			  </ion-item>
+
+        <ion-item>
+          <ion-label>06:00 PM - 06:30 PM</ion-label>
+          <ion-select [(ngModel)]="timeSlot19" >
+            <ion-option value=undefined> - </ion-option>
+            <ion-option  *ngFor="let copart of coparts;" value={{copart.coparts_name}} [selected]="copart.coparts_name == copart19">{{copart.coparts_name}}</ion-option>
+            <!--<ion-option *ngFor="let copart of coparts;" value={{copart.coparts_name}}>{{copart.coparts_name}}</ion-option>-->
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>06:30 PM - 07:00 PM</ion-label>
+          <ion-select [(ngModel)]="timeSlot20" >
+            <ion-option value=undefined> - </ion-option>
+            <ion-option  *ngFor="let copart of coparts;" value={{copart.coparts_name}} [selected]="copart.coparts_name == copart20">{{copart.coparts_name}}</ion-option>
+            <!--<ion-option *ngFor="let copart of coparts;" value={{copart.coparts_name}}>{{copart.coparts_name}}</ion-option>-->
+          </ion-select>
+        </ion-item>
+        <!--<ion-item>-->
+          <!--<ion-label>Toppings</ion-label>-->
+          <!--<ion-select [(ngModel)]="toppings" cancelText="Nah" okText="Okay!">-->
+            <!--<ion-option value="bacon" >Bacon</ion-option>-->
+            <!--<ion-option value="olives">Black Olives</ion-option>-->
+            <!--<ion-option value="xcheese" selected="true">Extra Cheese</ion-option>-->
+            <!--<ion-option value="peppers">Green Peppers</ion-option>-->
+            <!--<ion-option value="mushrooms">Mushrooms</ion-option>-->
+            <!--<ion-option value="onions">Onions</ion-option>-->
+            <!--<ion-option value="pepperoni">Pepperoni</ion-option>-->
+            <!--<ion-option value="pineapple">Pineapple</ion-option>-->
+            <!--<ion-option value="sausage">Sausage</ion-option>-->
+            <!--<ion-option value="Spinach">Spinach</ion-option>-->
+          <!--</ion-select>-->
+        <!--</ion-item>-->
+			<!--</ion-list>-->
+
+	    </ion-col>
+	    <!--<ion-col col-1></ion-col>-->
+	  </ion-row>
+	</ion-grid>
+
+	<button ion-button class="button_submit" (click)="presentConfirm()">Submit</button>
+
+</ion-content>
